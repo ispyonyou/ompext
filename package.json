@@ -55,6 +55,10 @@
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "node ./node_modules/vscode/bin/test"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ispyonyou/ompext.git"
+	},
 	"devDependencies": {
 		"@types/mocha": "^2.2.42",
 		"@types/node": "^8.10.25",
