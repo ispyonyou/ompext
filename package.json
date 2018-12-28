@@ -1,0 +1,75 @@
+{
+	"name": "ompext",
+	"displayName": "OmpExt",
+	"description": "",
+	"version": "0.0.1",
+	"publisher": "avs",
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:ompext.runScriptAtBase",
+		"onCommand:ompext.runScriptAtBaseAndSaveHistory",
+		"onCommand:ompext.runScripAtAllBases"
+	],
+	"main": "./src/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "ompext.runScriptAtBase",
+				"title": "Omp: Run Scrip At Base..."
+			},
+			{
+				"command": "ompext.runScriptAtBaseAndSaveHistory",
+				"title": "Omp: Run Scrip At Base And Save In SCRIPT_HISTORY..."
+			},
+			{
+				"command": "ompext.runScripAtAllBases",
+				"title": "Omp: Run Scrip At All Bases..."
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "ompext.runScripAtAllBases",
+					"when": "editorLangId == sql"
+				}
+			]
+		},
+		"configuration": [
+			{
+				"title": "Omp",
+				"properties": {
+					"ompDbIni.path": {
+						"type": "string",
+						"default": "\\\\omp04\\Omega\\Weekly\\App32\\ini\\OMP_DB.ini"
+					}
+				}
+			}
+		]
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"@types/mocha": "^2.2.42",
+		"@types/node": "^8.10.25",
+		"electron-rebuild": "^1.8.2",
+		"eslint": "^4.11.0",
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25"
+	},
+	"dependencies": {
+		"async": "^2.6.1",
+		"iconv-lite": "^0.4.24",
+		"oracledb": "^3.0.1",
+		"path": "^0.12.7",
+		"require-rebuild": "^1.2.8",
+		"shelljs": "^0.8.3",
+		"tmp": "0.0.33"
+	}
+}
