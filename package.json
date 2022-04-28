@@ -68,7 +68,7 @@
 		"vscode": "^1.1.25"
 	},
 	"dependencies": {
-		"async": "^2.6.1",
+		"async": "^2.6.4",
 		"iconv-lite": "^0.4.24",
 		"oracledb": "^3.0.1",
 		"path": "^0.12.7",
